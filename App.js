@@ -1,12 +1,13 @@
 import { StatusBar } from 'expo-status-bar';
 import { useFonts } from 'expo-font';
-import { StyleSheet, Text, View } from 'react-native';
-// import { NavigationContainer } from '@react-navigation/native';
+import { ImageBackground, StyleSheet, Text, View } from 'react-native';
+import { NavigationContainer } from '@react-navigation/native';
 import {
 	RegistrationScreen,
 	LoginScreen,
 	PostsScreen,
 } from './src/screens/auth';
+import imgBg from './src/assets/images/background.jpg';
 
 export default function App() {
 	const [fontsLoaded] = useFonts({
@@ -18,28 +19,25 @@ export default function App() {
 	if (!fontsLoaded) return null;
 
 	return (
-		// <NavigationContainer>
-		<RegistrationScreen />
-		// </NavigationContainer>
-
-		// <View style={styles.container}>
-		// 	<Text>Open up App.js to start working on your app!</Text>
-		// 	<Text style={styles.text}>Andrii TSOKUR Test Launch</Text>
-		// 	<StatusBar style="auto" />
-		// </View>
+		<ImageBackground
+			source={imgBg}
+			style={styles.container}
+			imageStyle={styles.bgScreen}
+		>
+			<NavigationContainer>
+				<RegistrationScreen />
+			</NavigationContainer>
+		</ImageBackground>
 	);
 }
 
-const style = StyleSheet.create({
+const styles = StyleSheet.create({
 	container: {
 		flex: 1,
-		backgroundColor: '#fff',
-		alignItems: 'center',
-		justifyContent: 'center',
+		justifyContent: 'flex-end',
 	},
 
-	text: {
-		fontFamily: 'Roboto-Bold',
-		fontSize: 24,
+	bgScreen: {
+		resizeMode: 'cover',
 	},
 });
