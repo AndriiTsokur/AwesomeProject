@@ -1,7 +1,6 @@
 import { StatusBar } from 'expo-status-bar';
 import { useFonts } from 'expo-font';
-import { ImageBackground, StyleSheet, Text, View } from 'react-native';
-import { NavigationContainer } from '@react-navigation/native';
+import { ImageBackground, StyleSheet } from 'react-native';
 import {
 	RegistrationScreen,
 	LoginScreen,
@@ -24,9 +23,8 @@ export default function App() {
 			style={styles.container}
 			imageStyle={styles.bgScreen}
 		>
-			<NavigationContainer>
-				<RegistrationScreen />
-			</NavigationContainer>
+			<RegistrationScreen />
+			{/* <LoginScreen /> */}
 		</ImageBackground>
 	);
 }
