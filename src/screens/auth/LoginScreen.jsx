@@ -98,7 +98,7 @@ const styles = StyleSheet.create({
 		color: '#212121',
 		fontFamily: 'Roboto-Medium',
 		fontSize: 30,
-		fontWeight: 500,
+		// fontWeight: 500,
 		letterSpacing: 0.3,
 	},
 
